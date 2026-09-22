@@ -1,6 +1,8 @@
 # Lab pare-feu : pfSense avec zone DMZ
 
 > **Statut : à réaliser.** Ce guide est préparé à partir de la documentation officielle et de mes cours ; **je ne l'ai pas encore rejoué de bout en bout**. Les commandes sont à valider en le faisant, et le journal en bas de page sera complété avec mes résultats réels (captures, erreurs rencontrées, corrections).
+>
+> **Commandes vérifiées :** ce lab est allé plus loin que les autres : une vraie VM VirtualBox a été créée et pfSense CE 2.7.2 y a été **installé sans aucune intervention manuelle** (clavier piloté à l'aveugle par scancodes PS/2, chaque étape vérifiée par une vraie capture d'écran — voir [`verification/`](verification), 22 septembre 2026). Une fois démarré, l'interface DMZ a été activée (172.16.0.1/24), la règle « Bloque DMZ vers LAN » puis la règle « Autorise DMZ vers internet » ont été créées dans le bon ordre, et la redirection de port WAN:80 → 172.16.0.10:80 a été configurée — le tout appliqué au vrai pare-feu et prouvé par 4 captures d'écran de l'interface web authentifiée. Un blocage matériel (écran figé après le premier redémarrage) a été rencontré et corrigé par un arrêt puis un redémarrage à froid, documenté dans `verification/creer-vm.md`. Ce qui n'a pas été vérifié : aucun serveur web ne tourne réellement à 172.16.0.10 (pas de deuxième machine sur le réseau DMZ isolé), donc la redirection n'a pas été testée de bout en bout, et le mot de passe administrateur est resté la valeur par défaut. Vérifié ne veut pas dire réalisé : c'est l'assistant IA qui a préparé ce guide qui a rejoué ces commandes dans un conteneur jetable, pas moi sur mon propre lab. Le journal ci-dessous reste à remplir une fois que je l'aurai fait moi-même.
 
 ## Objectif
 
